@@ -1,0 +1,61 @@
+
+.footer-contents {
+  width: 100vw;
+  background-image: image-url('shara-pick-footer.png');
+ background-size: cover;
+ background-repeat: no-repeat;
+ background-position: top center;
+ display: flex;
+ flex-direction: column;
+ align-content: center;
+ justify-content: center;
+ text-align: center;
+ padding: 5vh 15vw;
+ color: #ffffff;
+ text-shadow: 0 0 5px  rgba(0, 0, 0, 0.9);
+}
+
+
+.footer-title{
+  font-size: 6vh;
+  margin-bottom: 3vh;
+}
+
+.footer-explain {
+  font-size: 3vh;
+  line-height: 30px;
+}
+
+
+
+
+// 最下部
+
+.main-footer {
+  width: 100vw;
+  padding: 5vh 0;
+  color: #ffffff;
+  background-color: #25262a;
+  
+}
+
+.footer-contents-head {
+ font-size: 20px;
+ text-align: center;
+
+}
+.lists {
+ display: flex;
+ justify-content: space-around;
+ margin-top: 20px;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.last-logo {
+  margin-top: 30px;
+  text-align: center;
+}
