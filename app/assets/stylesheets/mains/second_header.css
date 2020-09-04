@@ -1,0 +1,16 @@
+.second-header {
+  width: 100%;
+  min-width: 800px;
+  height: 130px;
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.second-logo {
+  margin-right: 10px;
+  width: 200px;
+  height: 70px;
+}

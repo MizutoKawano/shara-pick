@@ -1,12 +1,18 @@
-<header class='top-page-header'>
+<header class='header'>
+<div  class='top-page-header'>
   <div calss='header-logo'>
     <%= link_to image_tag("shara-pick-logo.png", class:"shara-pick-icon"), "/" %> 
     <div class='top-list'>
       <ul class='main-list'>
-        <li><%= link_to '出品', "#", class:"exhibition-list"%></li> 
-        <li><%= link_to 'マイページ',"#",class:"my-page"%></li>
-        <li><%= link_to 'ログイン', "#", class:"login"%></li>
-        <li><%= link_to '新規登録', "#", class:"sign-up"%></li>
+        <li><%= link_to '出品', :new_item, class:"exhibition-list"%></li> 
+        <li><%= link_to '取引',"#",class:"my-page"%></li>
+        <% if user_signed_in? %>
+        <li><%= link_to current_user.nickname, "/users/#{current_user.id}", class:"user-nickname"%>様</li>
+        <li><%= link_to 'ログアウト', :destroy_user_session , method: :delete, class: "logout" %> </li> 
+        <% else%>
+        <li><%= link_to 'ログイン', :new_user_session, class:"login"%></li>
+        <li><%= link_to '新規登録', :new_user_registration , class:"sign-up"%></li>
+        <% end %>
 
         </ul>
         </div>
@@ -19,5 +25,5 @@
               <%= image_tag "search.png", class:"search-icon"%> 
             </button> 
             </form>  
-  
+  </div>
   </header>
