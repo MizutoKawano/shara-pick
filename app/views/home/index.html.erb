@@ -8,4 +8,12 @@
   <%#商品一覧%>
 
 
-<%= render "mains/footer" %>
+
+
+<%# 出品ボタン%>
+<div class='purchase-btn'>
+  <span class='purchase-btn-text'>出品する</span>
+  <%= link_to image_tag('box.png' , size: '185x50' ,class: "purchase-btn-icon"), new_item_path %>
+</div>
+
+  <%= render "mains/footer" %>
