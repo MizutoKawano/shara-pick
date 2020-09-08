@@ -1,0 +1,120 @@
+<%= render "mains/header" %>
+
+<%# 商品の概要 %>
+<div class="item-show">
+  <div class="item-box">
+    <h2 class="name">
+      <%= @item.name %>
+    </h2>
+    <div class='item-img-content'>
+      <%= image_tag @item.image ,class:"item-box-img" %>
+      
+    </div>
+    <div class="item-price-box">
+      <span class="item-price">
+        <%=@item .price %>
+      </span>
+      <span class="item-postage">
+        (税込) 送料込み
+      </span>
+    </div>
+
+   
+ <% if user_signed_in? && current_user.id == @item.user.id%>
+    <%= link_to '商品の編集', edit_item_path(@item.id), method: :get, class: "item-red-btn" %>
+    <p class='or-text'>or</p>
+    <%= link_to '削除', "#", method: :delete, class:'item-destroy' %>
+    <% elsif   user_signed_in? && current_user.id != @item.user_id %>
+      <%= link_to '購入画面に進む',  item_transaction_index_path(@item) ,class:"item-red-btn"%>
+    <% else%>
+     <%= link_to '購入画面に進む',   new_user_session_path ,class:"item-red-btn"%>
+    <% end %>
+   
+
+    <%# 出品時の情報%>
+
+    <div class="item-explain-box">
+      <span><%= @item.comment %></span>
+    </div>
+    <table class="detail-table">
+      <tbody>
+       <tr>
+          <th class="detail-item">レンタル可能期間</th>
+          <td class="detail-value"><%= @item.period_start  %>〜<%= @item.period_end%></td>
+        </tr>
+        <tr>
+          <th class="detail-item">カテゴリー</th>
+          <td class="detail-value"><%= @item.category.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">商品の状態</th>
+          <td class="detail-value"><%= @item.status.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">配送料の負担</th>
+          <td class="detail-value"><%= @item.fee.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">発送元の地域</th>
+          <td class="detail-value"><%= @item.arium.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">発送日の目安</th>
+          <td class="detail-value"><%= @item.day.name %></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <%#出品時の情報%>
+    <div class="option">
+      <div class="favorite-btn">
+        <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
+       <% if current_user.already_liked?(@item) %>
+       <%= link_to '取り消す', item_like_path(@item), method: :delete, class:"like-text" %>
+       <% else %>
+  <%= link_to 'お気に入り', item_likes_path(@item) , method: :post, class:"like-text"%>
+<% end %><%= @item.likes.count%> 
+      </div>
+      <div class="report-btn">
+        <%= image_tag "flag.png" ,class:"report-flag-icon" ,width:"20",height:"20"%>
+        <span>不適切な商品の通報</span>
+      </div>
+    </div>
+  </div>
+  <%# /商品の概要 %>
+
+
+  <p class="comment-title">コメント一覧</p>
+  <% @comments.each do |c| %>
+    <div class="comment-name">
+      <% unless c.user.blank? %>
+        <% end %>
+     <%= c.user.nickname unless c.user.blank? %>
+      <br />
+     <%= c.content %>
+     <% end %>
+    </div>
+   
+  
+
+
+
+  <% if user_signed_in? %>
+    <%= form_with(model: [@item, @comment], local: true) do |f| %>
+      <%= f.text_field :content,  rows: 5 %>
+      
+      <div class="comment">
+      <%= button_tag type: "submit", class: "comment-btn" do %>
+         <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"25",height:"25"%>
+        <span>コメントする<span>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+
+
+
+
+</div>
+
+<%= render "mains/footer" %>

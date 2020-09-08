@@ -7,12 +7,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  min-width: 500px;
-}
-
-.items-sell-header {
-  padding: 5vh 0;
-  text-align: center;
+  min-width: 400px;
 }
 
 .items-sell-main {
@@ -31,6 +26,16 @@
 /* 共通 */
 .indispensable {
   background: #ea352d;
+  margin-left: 8px;
+  padding: 3px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.any {
+  background: #666666;
   margin-left: 8px;
   padding: 3px;
   border-radius: 2px;
@@ -81,7 +86,7 @@
 
 .click-upload {
   margin: 15px 0;
-  min-width: 500px;
+  min-width: 250px;
 }
 
 .click-upload>p {
@@ -106,6 +111,21 @@
 
 .items-explain {
   margin-top: 2vh;
+}
+
+.items-brand {
+   margin-top: 2vh;
+}
+
+.input-birth-wrap{
+ display: flex;
+ justify-content: center;
+}
+  
+.date-bold-text{
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
 }
 
 /* /商品名と商品説明 */

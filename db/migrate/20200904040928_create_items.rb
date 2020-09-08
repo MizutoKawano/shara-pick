@@ -5,9 +5,11 @@ class CreateItems < ActiveRecord::Migration[6.0]
       t.text       :comment,     null:false
       t.integer    :category_id, null:false
       t.string     :brand
+      t.date       :period_start,null:false
+      t.date       :period_end,  null:false
       t.integer    :status_id,   null:false
       t.integer    :fee_id,      null:false
-      t.integer    :aria_id,     null:false
+      t.integer    :arium_id,    null:false
       t.integer    :day_id,      null:false
       t.integer    :price,       null:false
       t.references :user,        null:false, foreign_key: true

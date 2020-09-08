@@ -5,9 +5,9 @@
     <div class='top-list'>
       <ul class='main-list'>
         <li><%= link_to '出品', :new_item, class:"exhibition-list"%></li> 
-        <li><%= link_to '取引',"#",class:"my-page"%></li>
+        <li><%= link_to '取引', rental_path(current_user.id),class:"my-page"%></li>
         <% if user_signed_in? %>
-        <li><%= link_to current_user.nickname, "/users/#{current_user.id}", class:"user-nickname"%>様</li>
+        <li><%= link_to current_user.nickname, user_path(current_user.id), class:"user-nickname"%>様</li>
         <li><%= link_to 'ログアウト', :destroy_user_session , method: :delete, class: "logout" %> </li> 
         <% else%>
         <li><%= link_to 'ログイン', :new_user_session, class:"login"%></li>
