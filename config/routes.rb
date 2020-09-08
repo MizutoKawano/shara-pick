@@ -1,8 +1,16 @@
 Rails.application.routes.draw do
   get 'users/show'
 devise_for :users
- root 'home#index'
- resources :users, only: :show
+ 
+ resources :users, only: [:show]
+ resources :rental, only: [:show]
  resources :items do
+  resources :likes, only: [:create, :destroy]
+  resources :comments, only: [:create]
+  resources :transaction, only:[:index, :create]
+ end
+
+ root 'home#index'
+
 end
-end
+
