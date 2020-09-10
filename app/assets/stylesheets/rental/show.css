@@ -1,0 +1,13 @@
+.user-name-logo{
+  font-size: 24px;
+  width: 100vw;
+ display: flex;
+ flex-direction: column;
+ align-content: center;
+ justify-content: center;
+ text-align: center;
+ padding: 5vh 15vw;
+ color: #ffffff;
+ text-shadow: 0 0 5px  rgba(0, 0, 0, 0.9);
+}  
+

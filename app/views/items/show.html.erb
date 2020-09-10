@@ -25,9 +25,9 @@
     <p class='or-text'>or</p>
     <%= link_to '削除', "#", method: :delete, class:'item-destroy' %>
     <% elsif   user_signed_in? && current_user.id != @item.user_id %>
-      <%= link_to '購入画面に進む',  item_transaction_index_path(@item) ,class:"item-red-btn"%>
+      <%= link_to 'レンタル画面に進む',  item_transaction_index_path(@item) ,class:"item-red-btn"%>
     <% else%>
-     <%= link_to '購入画面に進む',   new_user_session_path ,class:"item-red-btn"%>
+     <%= link_to 'レンタル画面に進む',   new_user_session_path ,class:"item-red-btn"%>
     <% end %>
    
 
@@ -89,9 +89,7 @@
     <div class="comment-name">
       <% unless c.user.blank? %>
         <% end %>
-     <%= c.user.nickname unless c.user.blank? %>
-      <br />
-     <%= c.content %>
+     <%= c.user.nickname unless c.user.blank? %> <%= c.content %>
      <% end %>
     </div>
    

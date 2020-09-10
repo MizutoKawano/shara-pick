@@ -118,7 +118,9 @@
     <%= link_to '新規投稿商品', :new_item , class: "subtitle" %>
     <ul class='item-lists'>
 
-      <%# 商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
+    
+
+    
        <% @items.each do |item| %>
       <li class='list'>
         <%= link_to  item_path(item.id)  do%>
@@ -126,8 +128,11 @@
           <%= image_tag item.image, class: "item-img" %>
 
           <%# 商品が売れていればsold outの表示 %>
-          
-         
+           <% if !item.payment.nil? %>
+          <div class='sold-out'>
+            <span>レンタル中</span>
+          </div>
+          <% end %>
           <%# //商品が売れていればsold outの表示 %>
 
         </div>

@@ -9,7 +9,7 @@
     <%= form_with model: @item, local: true do |f| %>
 
     
-    <%# render "mains/error_messages", model: f.object %>
+    <%- render "mains/error_messages", model: f.object %>
    
     <%# 出品画像 %>
     <div class="img-upload">
