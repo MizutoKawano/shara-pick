@@ -72,7 +72,7 @@
        <% if current_user.already_liked?(@item) %>
        <%= link_to '取り消す', item_like_path(@item), method: :delete, class:"like-text" %>
        <% else %>
-  <%= link_to 'お気に入り', item_likes_path(@item) , method: :post, class:"like-text"%>
+  <%= link_to 'いいね', item_likes_path(@item) , method: :post, class:"like-text"%>
 <% end %><%= @item.likes.count%> 
       </div>
       <div class="report-btn">

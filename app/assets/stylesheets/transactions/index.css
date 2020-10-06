@@ -16,7 +16,7 @@
   text-align: center;
   border-bottom: 2px solid #f5f5f5;
   font-weight: bold;
-  font-size: 22px;
+  font-size: 2vw;
 }
 
 /* 購入内容の表示 */
@@ -30,8 +30,8 @@
 
 .buy-item-img {
   margin-right: 20px;
-  height: 130px;
-  width: 250px;
+  height: 18vh;
+  width: 30vw;
   object-fit: contain;
 }
 
@@ -41,7 +41,7 @@
 }
 
 .buy-item-text {
-  font-size: 20px;
+  font-size: 2vw;
 }
 
 .buy-item-price {
@@ -49,14 +49,15 @@
   font-weight: bold;
   align-items: center;
   margin-top: 10px;
+  font-size: 1.5vw;
 }
 
 .item-price-text {
-  font-size: 15px;
+  font-size: 1.5vw;
 }
 
 .item-price-sub-text {
-  font-size: 12px;
+  font-size: 1vw;
 }
 
 /* /購入内容の表示 */
@@ -72,11 +73,11 @@
 }
 
 .item-payment-title {
-  font-size: 20px;
+  font-size: 2vw;
 }
 
 .item-payment-price {
-  font-size: 25px;
+  font-size: 2.2vw;
 }
 
 /* /支払額の表示 */
@@ -92,7 +93,7 @@
   text-align: center;
   font-weight: bold;
   margin-top: 2vh;
-  font-size: 20px;
+  font-size: 2vw;
 }
 
 .available-card {
@@ -119,7 +120,7 @@
   border-radius: 4px;
   border: 1px solid #ccc;
   background: #fff;
-  font-size: 16px;
+  font-size: 1.3vw;
   resize: none;
   line-height: 45px;
   text-align: center;
@@ -132,22 +133,23 @@
   display: flex;
   justify-content: center;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 1.5vw;
   margin-top: 2vh;
+  color: #ea352d;
 
 }
 
 
 /* 配送先の入力 */
 .shipping-address-form {
-  margin-top: 15px;
+  margin-top: 1.2vw;
 }
 
 .form-any {
   background: #ccc;
   border-radius: 2px;
   color: #fff;
-  font-size: 12px;
+  font-size: 1.2vw;
   padding: 2px 4px;
 }
 

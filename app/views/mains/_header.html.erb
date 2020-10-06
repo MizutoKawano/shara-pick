@@ -1,29 +1,29 @@
 <header class='header'>
-<div  class='top-page-header'>
-  <div calss='header-logo'>
-    <%= link_to image_tag("shara-pick-logo.png", class:"shara-pick-icon"), "/" %> 
-    <div class='top-list'>
+
+<div class='search-bar-contents'>
+    <%= link_to image_tag("shara-pick-logo.png", class:"shara-pick-icon"), "/" %>
+    <form class="search-form" action="#">
+      <input class='input-box' placeholder='キーワードから探す'>
+      <button class="search-button">
+        <%= image_tag "search.png", class:"search-icon" %>
+      </button>
+    </form>
+</div>
+
+
+
       <ul class='main-list'>
-        <li><%= link_to '出品', :new_item, class:"exhibition-list"%></li> 
-        <li><%= link_to '取引', rental_path(current_user.id),class:"my-page"%></li>
-        <% if user_signed_in? %>
-        <li><%= link_to current_user.nickname, user_path(current_user.id), class:"user-nickname"%>様</li>
-        <li><%= link_to 'ログアウト', :destroy_user_session , method: :delete, class: "logout" %> </li> 
+       <% if user_signed_in? %>
+        <li><%= link_to '出品', :new_item, class:"list"%></li> 
+        <li><%= link_to '取引履歴', rental_path(current_user.id),class:"list"%></li>
+        <li><%= link_to 'マイページ', user_path(current_user.id), class:"list"%></li>
+        <li><%= link_to 'ログアウト', :destroy_user_session , method: :delete, class: "list" %> </li> 
         <% else%>
-        <li><%= link_to 'ログイン', :new_user_session, class:"login"%></li>
-        <li><%= link_to '新規登録', :new_user_registration , class:"sign-up"%></li>
-        <% end %>
-
-        </ul>
-        </div>
-        </div>
-
-        <div  class='form-contents'>
-          <form class="search-form" action="#">
-           <input class='input-box' placeholder='キーワードで探す'>
-　　　　　　　　<button class="search-button">
-              <%= image_tag "search.png", class:"search-icon"%> 
-            </button> 
-            </form>  
-  </div>
+        <li><%= link_to  '出品', :new_user_session, class:"list"%></li> 
+        <li><%= link_to '取引履歴', :new_user_session,class:"list"%></li>
+        <li><%= link_to 'ログイン', :new_user_session, class:"llist"%></li>
+        <li><%= link_to '新規登録', :new_user_registration , class:"list"%></li>
+      <% end %>
+     </ul>
+        
   </header>

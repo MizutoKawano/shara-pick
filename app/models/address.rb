@@ -3,6 +3,7 @@ class Address < ApplicationRecord
 
   belongs_to :item
   belongs_to :user
+  
   belongs_to_active_hash :arium
 
   validates :arium_id, numericality: { other_than: 1 }

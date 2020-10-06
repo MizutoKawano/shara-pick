@@ -2,23 +2,28 @@
   box-sizing: border-box;
 }
 
+.search-bar-contents {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+/* ロゴ　*/
+
 .top-page-header {
   width: 100vw;
   padding: 2vh 10vw;
   display: flex;
   flex-direction: column;
 }
-
-.header-logo {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .shara-pick-icon {
   width:20vw;
   margin-right: 5vw;
 }
+
+/* ロゴ */
+
+
+/* フォーム*/
 
 .form-contents {
  display: flex;
@@ -27,11 +32,9 @@
 
 .search-form {
   width: 65vw;
-  height: 7vh;
+  height: 5vh;
   display: flex;
-  justify-content: flex-end;
   margin-bottom: 5px;
-  
 }
 
 .search-form>.input-box {
@@ -42,9 +45,10 @@
 
 .search-button {
   width: 8vh;
+  height: 7vh;
   border: 0;
   cursor: pointer;
-  background-color: #1e63b8;
+  background-color:#0033cc ;
   padding: 8px;
 }
 
@@ -52,52 +56,26 @@
   width: 100%;
 }
 
-.top-list {
-  font-size: 20px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  width: 100%;
-  padding: 1vh 0;
-}
+/* フォーム　*/
+
+/* リスト */
+
 
 .main-list {
   display: flex;
+  justify-content:flex-end ;
+  padding: 1vh;
+  font-size: 20px;
   min-width: 200px;
  margin-bottom: 30px;
 }
 
-.exhibition-list {
-  text-decoration: none;
-  margin-right: 10vw;
-  color: #000000;
-}
-
-.my-page {
-  text-decoration: none;
-  margin-right: 10vw;
-  color: #000000;
-}
-
-.login {
-  text-decoration: none;
-  margin-right: 10vw;
-  color: #000000;
-}
-
-.sign-up {
-  text-decoration: none;
-  margin-right: 10vw;
-  color: #000000;
-}
-
-.user-nickname{
+.list {
+  margin-right: 5vw;
   text-decoration: none;
   color: #000000;
 }
 
-.logout {
-  margin-left: 10vw;
-  text-decoration: none;
-  color: #000000;
-}
+
+
+/* リスト　*/

@@ -13,18 +13,22 @@ class User < ApplicationRecord
            self.likes.exists?(item_id: item.id)
          end
        
+         with_options presence: true do
 
+        
           name_word = /\A[ぁ-んァ-ン一-龥]+\z/
           email_word = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
           pass_word = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i
+          validates :nickname
           validates :family_name,         format: { with: /#{name_word}/, message: 'は漢字で入力して下さい。' }
           validates :last_name,           format: { with: /#{name_word}/, message: 'は漢字で入力して下さい。' }
           validates :email, uniqueness: true, format: { with: /#{email_word}/, message: 'は＠を入れてください。' }
+          validates :birthday
         
         
       
         pass_word = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i
-      
         validates :password, length: { minimum: 6 }, format: { with: /#{pass_word}/, message: 'は英数字で入力して下さい。' }
        
+         end
 end

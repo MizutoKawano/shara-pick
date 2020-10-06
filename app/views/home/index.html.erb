@@ -5,7 +5,7 @@
   <%# 画面上部の「人生を変えるフリマアプリ」帯部分 %>
   <div class='title-contents'>
     <h2 class='service-title'>
-      シェアアプリ
+      シェアピック
     </h2>
     <p class='service-explain'>
       SharaPickはだれでもかんたんに出品・レンタルができる
@@ -37,7 +37,7 @@
         <%= image_tag "furima-intro02.png", class:"list-pict" %>
         <h3 class='reason-list-text'>
           <span class='reason-list-blue-text'>シンプル</span>
-          で使いやすい
+          で簡単！
         </h3>
         <p class='reason-list-description'>
           めんどくさい入力は必要なく、検索も購入もスムーズ！
@@ -60,7 +60,7 @@
   <%# 画面中央の「会員数日本一位」帯部分 %>
   <div class='ad-contents'>
     <h2 class='ad-title'>
-      会員数日本一位
+      登録者数日本一位
     </h2>
     <p class='ad-explain'>
       SharaPickは、最も人気な個人シェアリングアプリ。
@@ -114,8 +114,7 @@
 
   <%# 商品一覧 %>
   <div class='item-contents'>
-    <h2 class='title'>ピックアップカテゴリー</h2>
-    <%= link_to '新規投稿商品', :new_item , class: "subtitle" %>
+    <h2 class='title'>新規投稿商品</h2>
     <ul class='item-lists'>
 
     
@@ -161,9 +160,16 @@
 
 
 <%# 出品ボタン%>
+ <% if user_signed_in? %>
 <div class='purchase-btn'>
   <span class='purchase-btn-text'>出品する</span>
   <%= link_to image_tag('box.png' , size: '185x50' ,class: "purchase-btn-icon"), new_item_path %>
+  <%else%>
+  <div class='purchase-btn'>
+  <span class='purchase-btn-text'>出品する</span>
+  <%= link_to image_tag('box.png' , size: '185x50' ,class: "purchase-btn-icon"), new_user_session_path%>
+</div>
+  <%end%>
 </div>
 
   <%= render "mains/footer" %>
