@@ -8,6 +8,7 @@ devise_for :users
   resources :likes, only: [:create, :destroy]
   resources :comments, only: [:create]
   resources :transaction, only:[:index, :create]
+  
  end
 
  root 'home#index'
